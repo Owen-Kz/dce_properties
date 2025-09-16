@@ -1,6 +1,41 @@
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+
+    useEffect(() => {
+      // Smooth scroll function
+      const handleSmoothScroll = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+          e.preventDefault();
+          const href = target.getAttribute('href');
+          const targetId = href?.substring(1);
+          const targetElement = targetId ? document.getElementById(targetId) : null;
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      };
+  
+      // Add event listener to navigation links
+      const navLinks = document.querySelectorAll('div a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', handleSmoothScroll as EventListener);
+      });
+  
+      // Cleanup
+      return () => {
+        navLinks.forEach(link => {
+          link.removeEventListener('click', handleSmoothScroll as EventListener);
+        });
+      };
+    }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-subtle py-16">
       <div className="container mx-auto px-4">
@@ -33,9 +68,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button variant="hero" size="lg" className="px-8 py-4 text-lg">
+            <a href="#savings">
+              <Button variant="outline" size="lg" className="bg-teal-800 text-white px-8 py-4 text-lg">
               Start Saving Today
             </Button>
+            </a>
             <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
               Explore Property Plans
             </Button>

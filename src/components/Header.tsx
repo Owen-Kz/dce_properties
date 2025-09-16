@@ -72,6 +72,9 @@ const Header = () => {
           {/* Navigation - Hidden on mobile */}
           <nav className="hidden lg:flex items-center space-x-8">
             <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors">About Us</a>
+            <a href="#partners" className="text-foreground hover:text-primary transition-colors">Partners</a>
+
             <a href="#properties" className="text-foreground hover:text-primary transition-colors">Properties</a>
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
             <a href="#investors" className="text-foreground hover:text-primary transition-colors">Investors</a>

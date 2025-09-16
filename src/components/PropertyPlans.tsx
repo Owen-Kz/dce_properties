@@ -58,13 +58,13 @@ const PropertyPlans = () => {
     },
     {
       name: "Ibeju Lekki (Prime Zone)",
-      price: "₦5M",
+      price: "₦800k - ₦5M",
       description: "Near Free Trade Zone, premium location",
     },
   ];
 
   return (
-    <section id="properties" className="py-20 bg-background">
+    <section id="savings" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -120,7 +120,7 @@ const PropertyPlans = () => {
             <div>
               <strong className="text-foreground">Installment Interest:</strong> 2.5% for plans above 3 months
             </div>
-            <div>
+            <div id="properties">
               <strong className="text-foreground">Service Charge:</strong> ₦500/month per ₦1k daily subscription
             </div>
             <div>
@@ -130,7 +130,7 @@ const PropertyPlans = () => {
         </div>
 
         {/* Property Locations */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" >
           <h3 className="text-3xl font-bold text-foreground mb-4">
             Available Property Locations
           </h3>
