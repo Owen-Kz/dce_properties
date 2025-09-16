@@ -38,19 +38,19 @@ const InvestorHub = () => {
   const roiPlans = [
     {
       duration: "12 Months",
-      rate: "15%",
+      rate: "20%",
       example: "₦1,000,000 → ₦1,150,000",
       color: "bg-gradient-primary",
     },
     {
       duration: "18 Months",
-      rate: "20%",
+      rate: "25%",
       example: "₦2,000,000 → ₦2,400,000",
       color: "bg-gradient-secondary",
     },
     {
       duration: "24 Months",
-      rate: "25%",
+      rate: "30%",
       example: "₦5,000,000 → ₦6,250,000",
       color: "bg-accent",
     },
@@ -99,9 +99,9 @@ const InvestorHub = () => {
                       <SelectValue placeholder="Select duration" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="12">12 Months (15% ROI)</SelectItem>
-                      <SelectItem value="18">18 Months (20% ROI)</SelectItem>
-                      <SelectItem value="24">24 Months (25% ROI)</SelectItem>
+                      <SelectItem value="12">12 Months (20% ROI)</SelectItem>
+                      <SelectItem value="18">18 Months (25% ROI)</SelectItem>
+                      <SelectItem value="24">24 Months (30% ROI)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

@@ -135,7 +135,7 @@ const PropertyPlans = () => {
             Available Property Locations
           </h3>
           <p className="text-lg text-muted-foreground">
-            Pre-launch 2026 estates in prime locations across Lagos and Ogun State
+            Pre-launch estates in prime locations across Lagos and Ogun State
           </p>
         </div>
 
