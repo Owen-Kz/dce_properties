@@ -139,7 +139,7 @@ const InvestorHub = () => {
                   </div>
                 )}
 
-                <Button variant="hero" className="w-full text-lg py-3">
+                <Button variant="outline" className="bg-teal-800 text-white w-full text-lg py-3">
                   Start Investing
                 </Button>
               </CardContent>
