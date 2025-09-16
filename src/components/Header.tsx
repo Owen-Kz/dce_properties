@@ -1,6 +1,40 @@
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const Header = () => {
+  useEffect(() => {
+    // Smooth scroll function
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const href = target.getAttribute('href');
+        const targetId = href?.substring(1);
+        const targetElement = targetId ? document.getElementById(targetId) : null;
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    };
+
+    // Add event listener to navigation links
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', handleSmoothScroll as EventListener);
+    });
+
+    // Cleanup
+    return () => {
+      navLinks.forEach(link => {
+        link.removeEventListener('click', handleSmoothScroll as EventListener);
+      });
+    };
+  }, []);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
@@ -8,7 +42,6 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              {/* <span className="text-primary-foreground font-bold text-lg">DCE</span> */}
               <img src="https://res.cloudinary.com/dll8awuig/image/upload/v1758041712/portfolio/id_jy9p8lynw/ikqbueofjojdf4tuqr19.png" alt="DcE Logo" />
             </div>
             <div>

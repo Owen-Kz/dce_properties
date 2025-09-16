@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-foreground text-background py-16" id="contact">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -59,10 +59,10 @@ const Footer = () => {
             Join thousands of satisfied clients who have achieved their property ownership dreams with DCE Properties.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" className="text-teal-800 bg-white">
               Start Saving Now
             </Button>
-            <Button variant="outline" size="lg" className="border-background text-background hover:bg-background hover:text-foreground">
+            <Button variant="" size="lg" className="bg-teal-800 text-background hover:bg-background hover:text-foreground">
               Contact on WhatsApp
             </Button>
           </div>
