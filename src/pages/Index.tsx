@@ -5,6 +5,7 @@ import InvestorHub from "@/components/InvestorHub";
 import TrustSection from "@/components/TrustSection";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
+import Artisans from "@/components/Artisans";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <Hero />
       <PropertyPlans />
       <Services />
+      <Artisans />
       <InvestorHub />
       <TrustSection />
       <Footer />
