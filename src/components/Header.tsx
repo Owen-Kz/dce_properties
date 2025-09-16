@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   useEffect(() => {
     // Smooth scroll function
     const handleSmoothScroll = (e: MouseEvent) => {
@@ -18,6 +20,8 @@ const Header = () => {
             block: 'start'
           });
         }
+        // Close mobile menu after clicking a link
+        setIsMenuOpen(false);
       }
     };
 
@@ -34,6 +38,21 @@ const Header = () => {
       });
     };
   }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMenuOpen && !target.closest('.mobile-menu-button') && !target.closest('.mobile-menu')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -61,17 +80,44 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <Button variant="hero" size="lg" className="hidden md:flex">
+          <Button variant="hero" size="lg" className="hidden bg-teal-800 text-white md:flex">
             Start Saving to Own
           </Button>
 
           {/* Mobile menu button */}
-          <Button variant="ghost" size="sm" className="lg:hidden">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="lg:hidden mobile-menu-button"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+              />
             </svg>
           </Button>
         </div>
+
+        {/* Mobile dropdown menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden mobile-menu mt-4 py-4 bg-background/95 backdrop-blur-md rounded-lg border border-border">
+            <nav className="flex flex-col space-y-4">
+              <a href="#home" className="text-foreground hover:text-primary transition-colors px-4 py-2">Home</a>
+              <a href="#properties" className="text-foreground hover:text-primary transition-colors px-4 py-2">Properties</a>
+              <a href="#services" className="text-foreground hover:text-primary transition-colors px-4 py-2">Services</a>
+              <a href="#investors" className="text-foreground hover:text-primary transition-colors px-4 py-2">Investors</a>
+              <a href="#artisans" className="text-foreground hover:text-primary transition-colors px-4 py-2">Artisans</a>
+              <a href="#contact" className="text-foreground hover:text-primary transition-colors px-4 py-2">Contact</a>
+              <Button variant="hero" size="lg" className="bg-teal-800 text-white mx-4 mt-4">
+                Start Saving to Own
+              </Button>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
