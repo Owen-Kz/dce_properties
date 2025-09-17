@@ -83,6 +83,19 @@ const MeetTheTeam = () => {
     { value: "15+", label: "Awards & Recognition" }
   ];
 
+  // Company vision, mission and values
+  const companyValues = {
+    vision: "To be recognized as a dependable, innovative partner in delivering quality property and facility management solutions across diverse sectors in Nigeria.",
+    mission: "To provide tailored property, facility, and construction services that exceed client expectations through integrity, efficiency, and timely delivery.",
+    values: [
+      { name: "Integrity", description: "We maintain transparency in all our dealings and uphold the highest ethical standards." },
+      { name: "Excellence", description: "We strive for the highest quality in everything we do, delivering superior results." },
+      { name: "Accountability", description: "We take responsibility for our actions and commitments to our clients and stakeholders." },
+      { name: "Customer Focus", description: "We prioritize our clients' needs and work to exceed their expectations." },
+      { name: "Innovation", description: "We continuously seek better ways to serve our clients and improve our processes." }
+    ]
+  };
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -152,11 +165,49 @@ const MeetTheTeam = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">About DCE Properties</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Behind DCE Properties & Facility Management is a team of dedicated professionals 
-            committed to transforming the real estate landscape with integrity and innovation.
+            Discover our vision, mission, and values that drive our commitment to transforming 
+            the real estate landscape with integrity and innovation.
           </p>
+        </motion.div>
+
+        {/* Vision and Mission Section */}
+        <motion.div 
+          className="grid md:grid-cols-2 gap-12 mb-20"
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
+          <motion.div 
+            className="bg-teal-50 p-8 rounded-2xl"
+            variants={cardVariants}
+          >
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
+                <svg className="w-6 h-6 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-teal-800">VISION</h3>
+            </div>
+            <p className="text-gray-700 text-lg">{companyValues.vision}</p>
+          </motion.div>
+
+          <motion.div 
+            className="bg-teal-50 p-8 rounded-2xl"
+            variants={cardVariants}
+          >
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
+                <svg className="w-6 h-6 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-teal-800">MISSION</h3>
+            </div>
+            <p className="text-gray-700 text-lg">{companyValues.mission}</p>
+          </motion.div>
         </motion.div>
 
         {/* Stats Section */}
@@ -180,9 +231,68 @@ const MeetTheTeam = () => {
           ))}
         </motion.div>
 
+        {/* Values Section */}
+        <motion.div 
+          className="bg-teal-50 rounded-2xl p-10 mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.h3 
+            className="text-2xl font-bold text-gray-800 mb-8 text-center"
+            initial={{ opacity: 0 }}
+            animate={isVisible ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Our Core Values
+          </motion.h3>
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-5 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+          >
+            {companyValues.values.map((value, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-white p-6 rounded-lg text-center"
+                variants={valueCardVariants}
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <motion.div 
+                  className="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <svg className="w-7 h-7 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </motion.div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">{value.name}</h4>
+                <p className="text-gray-600 text-sm">{value.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Team Header */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our dedicated professionals bring expertise and passion to every project, 
+            ensuring exceptional service and results for our clients.
+          </p>
+        </motion.div>
+
         {/* Team Grid */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
@@ -255,84 +365,6 @@ const MeetTheTeam = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Company Values */}
-        <motion.div 
-          className="bg-teal-50 rounded-2xl p-10"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <motion.h3 
-            className="text-2xl font-bold text-gray-800 mb-8 text-center"
-            initial={{ opacity: 0 }}
-            animate={isVisible ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            Our Core Values
-          </motion.h3>
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-          >
-            <motion.div 
-              className="text-center"
-              variants={valueCardVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div 
-                className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                whileHover={{ rotate: 5, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <svg className="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </motion.div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">Integrity</h4>
-              <p className="text-gray-600">We maintain transparency in all our dealings and uphold the highest ethical standards.</p>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              variants={valueCardVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div 
-                className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                whileHover={{ rotate: 5, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <svg className="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </motion.div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">Innovation</h4>
-              <p className="text-gray-600">We continuously seek better ways to serve our clients and improve our processes.</p>
-            </motion.div>
-            <motion.div 
-              className="text-center"
-              variants={valueCardVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div 
-                className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                whileHover={{ rotate: 5, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <svg className="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </motion.div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">Community</h4>
-              <p className="text-gray-600">We believe in creating sustainable communities that enhance quality of life for all residents.</p>
-            </motion.div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
