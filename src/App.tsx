@@ -1,3 +1,4 @@
+// App.tsx
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,9 +16,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Only one route is needed for the main app */}
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+               <Route path="/about" element={<Index />} />
+          <Route path="/partners" element={<Index />} />
+          <Route path="/properties" element={<Index />} />
+          <Route path="/services" element={<Index />} />
+          <Route path="/investors" element={<Index />} />
+          <Route path="/artisans" element={<Index />} />
+          <Route path="/contact" element={<Index />} />
+          <Route path="*" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
