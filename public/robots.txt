@@ -1,0 +1,22 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Block crawling of admin and utility pages
+Disallow: /admin/
+Disallow: /wp-admin/ # if using WordPress
+Disallow: /login/
+Disallow: /search/
+
+Sitemap: https://www.dcepropertiesmgt.com/sitemap.xml
