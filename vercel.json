@@ -19,6 +19,10 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
+    },
+    {
+      "src" : "/sitemap.xml",
+      "dest" : "/sitemap.xml"
     }
   ]
 }
