@@ -139,7 +139,7 @@ const Hero = () => {
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="bg-white text-teal-800 hover:bg-teal-50 font-semibold text-lg px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
+                  className="bg-white text-teal-800 hover:bg-teal-50 font-medium text-lg px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   Start Your Journey
                 </Button>
@@ -149,7 +149,7 @@ const Hero = () => {
                 <Button 
                   variant="hero" 
                   size="lg" 
-                  className="border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-3 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                  className="border-2 border-white text-white hover:bg-white/10 font-medium text-lg px-8 py-3 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 >
                   Learn More
                 </Button>
