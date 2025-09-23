@@ -1,11 +1,11 @@
 // Header.tsx
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom"; // RE-ADD React Router imports
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Keep this for potential active link styling
+  const location = useLocation();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -21,11 +21,46 @@ const Header = () => {
 
   const closeMobileMenu = () => setIsMenuOpen(false);
 
+  // Smooth scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    closeMobileMenu();
+    
+    // If we're not on the home page, navigate to home first then scroll
+    if (location.pathname !== '/') {
+      // Navigate to home page
+      window.location.href = '/';
+      // The scroll will happen after the page loads due to the URL hash
+      return;
+    }
+
+    // If we're already on home page, smooth scroll to section
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 100);
+  };
+
+  // Handle navigation with smooth scroll for home page sections
+  const handleNavigation = (path: string, sectionId?: string) => {
+    if (path === '/' && sectionId) {
+      // For home page sections, use smooth scroll
+      scrollToSection(sectionId);
+    } else {
+      // For other pages, normal navigation
+      closeMobileMenu();
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo - Use Link for proper navigation */}
+          {/* Logo */}
           <Link to="/" className="flex items-center space-x-3" onClick={closeMobileMenu}>
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
               <img 
@@ -41,49 +76,70 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Navigation - Use proper Link components for SEO-friendly URLs */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            <Link 
+              to="/" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={() => handleNavigation('/', 'home')}
+            >
               Home
             </Link>
-            <Link to="/about" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            <Link 
+              to="/about" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={closeMobileMenu}
+            >
               About Us
             </Link>
-            <Link to="/partners" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            <Link 
+              to="/partners" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={closeMobileMenu}
+            >
               Partners
             </Link>
-            {/* <Link to="/properties" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
-              Properties
-            </Link> */}
-            <Link to="/services" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            <Link 
+              to="/services" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={closeMobileMenu}
+            >
               Services
             </Link>
-            <Link to="/projects" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
-             Projects
-            </Link>
-            <Link to="/artisans" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            {/* Projects Link - Smooth scroll on home page, normal navigation otherwise */}
+            <button
+              onClick={() => handleNavigation('/', 'projects')}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Projects
+            </button>
+            <Link 
+              to="/artisans" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={closeMobileMenu}
+            >
               Artisans
             </Link>
-            <Link to="/contact" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            <Link 
+              to="/contact" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={closeMobileMenu}
+            >
               Contact
             </Link>
           </nav>
 
-          {/* CTA Button with descriptive text */}
-          {/* <Button 
-            variant="hero" 
-            size="lg" 
-            className="hidden bg-teal-800 text-white md:flex"
-            onClick={() => {
-              // Scroll to properties section when CTA is clicked
-              const element = document.getElementById('properties');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Start Saving to Own
-          </Button> */}
+          {/* CTA Button */}
+          <div className="hidden lg:flex">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="bg-teal-700 text-white hover:bg-teal-800"
+              onClick={() => handleNavigation('/', 'contact')}
+            >
+              Get Started
+            </Button>
+          </div>
 
           {/* Mobile menu button */}
           <Button 
@@ -108,29 +164,71 @@ const Header = () => {
         {/* Mobile dropdown menu */}
         {isMenuOpen && (
           <div className="lg:hidden mobile-menu mt-4 py-4 bg-background/95 backdrop-blur-md rounded-lg border border-border">
-            <nav className="flex flex-col space-y-4 px-4" onClick={closeMobileMenu}>
-              <Link to="/" className="text-foreground hover:text-primary transition-colors px-4 py-2">Home</Link>
-              <Link to="/about" className="text-foreground hover:text-primary transition-colors px-4 py-2">About Us</Link>
-              <Link to="/partners" className="text-foreground hover:text-primary transition-colors px-4 py-2">Partners</Link>
-              {/* <Link to="/properties" className="text-foreground hover:text-primary transition-colors px-4 py-2">Properties</Link> */}
-              <Link to="/services" className="text-foreground hover:text-primary transition-colors px-4 py-2">Services</Link>
-              <Link to="/projects" className="text-foreground hover:text-primary transition-colors px-4 py-2">Projects</Link>
-              <Link to="/artisans" className="text-foreground hover:text-primary transition-colors px-4 py-2">Artisans</Link>
-              <Link to="/contact" className="text-foreground hover:text-primary transition-colors px-4 py-2">Contact</Link>
-              {/* <Button 
+            <nav className="flex flex-col space-y-2 px-4">
+              <button
+                onClick={() => handleNavigation('/', 'home')}
+                className="text-foreground hover:text-primary transition-colors px-4 py-2 text-left"
+              >
+                Home
+              </button>
+              
+              <Link 
+                to="/about" 
+                className="text-foreground hover:text-primary transition-colors px-4 py-2"
+                onClick={closeMobileMenu}
+              >
+                About Us
+              </Link>
+              
+              <Link 
+                to="/partners" 
+                className="text-foreground hover:text-primary transition-colors px-4 py-2"
+                onClick={closeMobileMenu}
+              >
+                Partners
+              </Link>
+              
+              <Link 
+                to="/services" 
+                className="text-foreground hover:text-primary transition-colors px-4 py-2"
+                onClick={closeMobileMenu}
+              >
+                Services
+              </Link>
+              
+              {/* Projects button for mobile */}
+              <button
+                onClick={() => handleNavigation('/', 'projects')}
+                className="text-foreground hover:text-primary transition-colors px-4 py-2 text-left"
+              >
+                Projects
+              </button>
+              
+              <Link 
+                to="/artisans" 
+                className="text-foreground hover:text-primary transition-colors px-4 py-2"
+                onClick={closeMobileMenu}
+              >
+                Artisans
+              </Link>
+              
+              <Link 
+                to="/contact" 
+                className="text-foreground hover:text-primary transition-colors px-4 py-2"
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Link>
+              
+              {/* Mobile CTA Button */}
+              <Button 
                 variant="hero" 
                 size="lg" 
-                className="bg-teal-800 text-white mx-4 mt-4"
-                onClick={() => {
-                  closeMobileMenu();
-                  const element = document.getElementById('properties');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                className="bg-teal-700 text-white hover:bg-teal-800 mt-4"
+                onClick={() => handleNavigation('/', 'contact')}
               >
-                Start Saving to Own
-              </Button> */}
+                Get Started
+              </Button>
             </nav>
           </div>
         )}
