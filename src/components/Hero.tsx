@@ -117,9 +117,9 @@ const Hero = () => {
           {/* Glass Background Container */}
           <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/20">
             {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
               <span className="block">Effortlessly</span>
-              <div className="min-h-[1.2em] flex items-center justify-center">
+              <div className="min-h-[1.2em] w-full flex items-center justify-center">
                 <span className="bg-gradient-to-r from-teal-200 to-teal-600 bg-clip-text text-transparent">
                   {animatedWords[currentWord]}
                 </span>
