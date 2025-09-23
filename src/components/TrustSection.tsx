@@ -3,22 +3,22 @@ import { Card, CardContent } from "@/components/ui/card";
 const TrustSection = () => {
   const testimonials = [
     {
-      name: "Adebayo Johnson",
+      name: "Linda Alome",
       role: "Property Owner",
-      content: "I started with ₦2,000 daily savings and now own a plot in Ikorodu. The transparency was amazing - I could track every payment on my dashboard.",
-      avatar: "AJ",
+      content: "DCE is a talk and do company. They only deal with 100% verified properties. And deliver as promised with utmost customer service",
+      avatar: "LA",
     },
     {
-      name: "Mrs. Folake Adeyemi",
+      name: "Maxwell Ayeni",
       role: "Investor",
-      content: "My ₦3M investment for 18 months returned ₦3.6M as promised. DCE Properties delivered exactly what they committed to.",
-      avatar: "FA",
+      content: "Professional team, quick response, and excellent customer service. Highly recommended,just a fail away,your needs will be meet.",
+      avatar: "MA",
     },
     {
-      name: "Emeka Okafor",
-      role: "Property Subscriber",
-      content: "The ₦152k monthly plan worked perfectly for my budget. Got my allocation certificate exactly 18 months later. Highly recommend!",
-      avatar: "EO",
+      name: "Wisdom Etim",
+      role: "Investor",
+      content: "DCE helped me understand property investment in simple terms. They are patient and honest.",
+      avatar: "WE",
     },
   ];
 
@@ -63,7 +63,7 @@ const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-8 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -121,7 +121,11 @@ const TrustSection = () => {
               </CardContent>
             </Card>
           ))}
+         
         </div>
+         <div className="text-center w-full p-4">
+            <a href="https://share.google/WsmolcSC3blo3EOOs" className="text-teal hover:underline" target="_blank" rel="noopener noreferrer">Share Your Experience</a>
+          </div>
       </div>
     </section>
   );

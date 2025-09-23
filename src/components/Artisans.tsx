@@ -138,18 +138,25 @@ const Artisans = () => {
                   min="0"
                 />
               </div>
-              <button 
+              {/* <button 
                 type="submit" 
                 className="w-full py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors font-semibold"
               >
                 Register Now
+              </button> */}
+
+                   <button 
+                type="button" 
+                className="w-full py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-colors font-semibold disabled:opacity-50"
+              disabled>
+               Coming Soon
               </button>
             </form>
           </div>
         </div>
 
         {/* Artisan Categories */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Artisan Categories</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {artisanCategories.map((category, index) => (
@@ -165,10 +172,10 @@ const Artisans = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Testimonials */}
-        <div className="bg-teal-50 p-10 rounded-2xl">
+        {/* <div className="bg-teal-50 p-10 rounded-2xl">
           <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">What Our Artisans Say</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow">
@@ -202,7 +209,7 @@ const Artisans = () => {
               <p className="text-gray-600">"The networking events have connected me with other professionals. I've formed partnerships that have doubled my client base."</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

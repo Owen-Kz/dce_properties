@@ -52,14 +52,14 @@ const Header = () => {
             <Link to="/partners" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
               Partners
             </Link>
-            <Link to="/properties" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+            {/* <Link to="/properties" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
               Properties
-            </Link>
+            </Link> */}
             <Link to="/services" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
               Services
             </Link>
-            <Link to="/investors" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
-              Investors
+            <Link to="/projects" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
+             Projects
             </Link>
             <Link to="/artisans" className="text-foreground hover:text-primary transition-colors" onClick={closeMobileMenu}>
               Artisans
@@ -70,7 +70,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button with descriptive text */}
-          <Button 
+          {/* <Button 
             variant="hero" 
             size="lg" 
             className="hidden bg-teal-800 text-white md:flex"
@@ -83,7 +83,7 @@ const Header = () => {
             }}
           >
             Start Saving to Own
-          </Button>
+          </Button> */}
 
           {/* Mobile menu button */}
           <Button 
@@ -108,16 +108,16 @@ const Header = () => {
         {/* Mobile dropdown menu */}
         {isMenuOpen && (
           <div className="lg:hidden mobile-menu mt-4 py-4 bg-background/95 backdrop-blur-md rounded-lg border border-border">
-            <nav className="flex flex-col space-y-4" onClick={closeMobileMenu}>
+            <nav className="flex flex-col space-y-4 px-4" onClick={closeMobileMenu}>
               <Link to="/" className="text-foreground hover:text-primary transition-colors px-4 py-2">Home</Link>
               <Link to="/about" className="text-foreground hover:text-primary transition-colors px-4 py-2">About Us</Link>
               <Link to="/partners" className="text-foreground hover:text-primary transition-colors px-4 py-2">Partners</Link>
-              <Link to="/properties" className="text-foreground hover:text-primary transition-colors px-4 py-2">Properties</Link>
+              {/* <Link to="/properties" className="text-foreground hover:text-primary transition-colors px-4 py-2">Properties</Link> */}
               <Link to="/services" className="text-foreground hover:text-primary transition-colors px-4 py-2">Services</Link>
-              <Link to="/investors" className="text-foreground hover:text-primary transition-colors px-4 py-2">Investors</Link>
+              <Link to="/projects" className="text-foreground hover:text-primary transition-colors px-4 py-2">Projects</Link>
               <Link to="/artisans" className="text-foreground hover:text-primary transition-colors px-4 py-2">Artisans</Link>
               <Link to="/contact" className="text-foreground hover:text-primary transition-colors px-4 py-2">Contact</Link>
-              <Button 
+              {/* <Button 
                 variant="hero" 
                 size="lg" 
                 className="bg-teal-800 text-white mx-4 mt-4"
@@ -130,7 +130,7 @@ const Header = () => {
                 }}
               >
                 Start Saving to Own
-              </Button>
+              </Button> */}
             </nav>
           </div>
         )}

@@ -12,6 +12,7 @@ import Partners from "@/components/Partners";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Projects from "@/components/Projects";
 
 const Index = () => {
   const location = useLocation();
@@ -164,10 +165,10 @@ const Index = () => {
       <section id="home" itemScope itemType="https://schema.org/WebPage">
         <Hero />
       </section>
-      
+{/*       
       <section id="properties" itemScope itemType="https://schema.org/RealEstateListing">
         <PropertyPlans />
-      </section>
+      </section> */}
       
       <section id="about" itemScope itemType="https://schema.org/AboutPage">
         <MeetTheTeam />
@@ -181,13 +182,18 @@ const Index = () => {
         <Services />
       </section>
       
+
+      <section id="projects" itemScope itemType="https://schema.org/CreativeWork">
+  <Projects />
+</section>
+      
       <section id="artisans" itemScope itemType="https://schema.org/WebPage">
         <Artisans />
       </section>
-      
+{/*       
       <section id="investors" itemScope itemType="https://schema.org/InvestmentOrDeposit">
         <InvestorHub />
-      </section>
+      </section> */}
       
       <section id="trust" itemScope itemType="https://schema.org/WebPage">
         <TrustSection />

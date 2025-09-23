@@ -24,69 +24,69 @@ const MeetTheTeam = () => {
         twitter: "#"
       }
     },
-    {
-      name: "Chioma Eze",
-      role: "Chief Operations Officer",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "Chioma oversees all operational aspects of DCE Properties, ensuring projects are delivered on time and within budget.",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Emmanuel Okafor",
-      role: "Head of Construction",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "A certified engineer with 12 years experience, Emmanuel ensures all construction projects meet the highest quality standards.",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Amina Suleiman",
-      role: "Finance Director",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "Amina manages the company's financial strategy and investment portfolios, ensuring sustainable growth and profitability.",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Tunde Williams",
-      role: "Head of Facility Management",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "Tunde brings 10 years of expertise in maintaining and enhancing property values through effective facility management.",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Ngozi Adeyemi",
-      role: "Customer Relations Manager",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description: "Ngozi ensures client satisfaction through transparent communication and personalized service throughout their property journey.",
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    }
+    // {
+    //   name: "Chioma Eze",
+    //   role: "Chief Operations Officer",
+    //   image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    //   description: "Chioma oversees all operational aspects of DCE Properties, ensuring projects are delivered on time and within budget.",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   name: "Emmanuel Okafor",
+    //   role: "Head of Construction",
+    //   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    //   description: "A certified engineer with 12 years experience, Emmanuel ensures all construction projects meet the highest quality standards.",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   name: "Amina Suleiman",
+    //   role: "Finance Director",
+    //   image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    //   description: "Amina manages the company's financial strategy and investment portfolios, ensuring sustainable growth and profitability.",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   name: "Tunde Williams",
+    //   role: "Head of Facility Management",
+    //   image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    //   description: "Tunde brings 10 years of expertise in maintaining and enhancing property values through effective facility management.",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // },
+    // {
+    //   name: "Ngozi Adeyemi",
+    //   role: "Customer Relations Manager",
+    //   image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    //   description: "Ngozi ensures client satisfaction through transparent communication and personalized service throughout their property journey.",
+    //   social: {
+    //     linkedin: "#",
+    //     twitter: "#"
+    //   }
+    // }
   ];
 
   const stats = [
-    { value: "12+", label: "Years Experience" },
-    { value: "500+", label: "Properties Developed" },
-    { value: "2,000+", label: "Happy Clients" },
-    { value: "15+", label: "Awards & Recognition" }
+    // { value: "12+", label: "Years Experience" },
+    // { value: "500+", label: "Properties Developed" },
+    // { value: "2,000+", label: "Happy Clients" },
+    // { value: "15+", label: "Awards & Recognition" }
   ];
 
   // Company vision, mission and values
   const companyValues = {
-    vision: "To be recognized as a dependable, innovative partner in delivering quality property and facility management solutions across diverse sectors in Nigeria.",
-    mission: "To provide tailored property, facility, and construction services that exceed client expectations through integrity, efficiency, and timely delivery.",
+    vision: "To become a trusted leader in real estate, hospitality, and facility management, creating affordable ownership and world-class property solutions for Nigerians at home and abroad.",
+    mission: "To simplify property ownership with innovative subscription models, deliver transparent facility management, and build strong partnerships that drive growth.",
     values: [
       { name: "Integrity", description: "We maintain transparency in all our dealings and uphold the highest ethical standards." },
       { name: "Excellence", description: "We strive for the highest quality in everything we do, delivering superior results." },
@@ -160,7 +160,7 @@ const MeetTheTeam = () => {
       <div className="container mx-auto px-4">
         {/* Header Section */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
@@ -174,7 +174,7 @@ const MeetTheTeam = () => {
 
         {/* Vision and Mission Section */}
         <motion.div 
-          className="grid md:grid-cols-2 gap-12 mb-20"
+          className="grid md:grid-cols-2 gap-12 mb-2"
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={containerVariants}
@@ -212,7 +212,7 @@ const MeetTheTeam = () => {
 
         {/* Stats Section */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-4"
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
@@ -233,7 +233,7 @@ const MeetTheTeam = () => {
 
         {/* Values Section */}
         <motion.div 
-          className="bg-teal-50 rounded-2xl p-10 mb-16"
+          className="bg-teal-50 rounded-2xl px-10 py-4 mb-0"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -277,7 +277,7 @@ const MeetTheTeam = () => {
         </motion.div>
 
         {/* Team Header */}
-        <motion.div 
+        {/* <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -288,10 +288,10 @@ const MeetTheTeam = () => {
             Our dedicated professionals bring expertise and passion to every project, 
             ensuring exceptional service and results for our clients.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Team Grid */}
-        <motion.div 
+        {/* <motion.div 
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
           variants={containerVariants}
           initial="hidden"
@@ -365,7 +365,7 @@ const MeetTheTeam = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
