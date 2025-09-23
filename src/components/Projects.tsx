@@ -74,7 +74,7 @@ const Projects = () => {
       category: "Facility Management",
       beforeImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758590862/portfolio/id_s3huxrpkp/s78qjym8pm3x7dpheyrf.jpg",
       afterImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758591442/portfolio/id_vmzgk6iiq/gbmjsvctmgbodaii4vgg.png",
-      description: "Professional facility management implementation for a Hospital complex, improving efficiency and patient satisfaction.",
+      description: "Professional facility management implementation for a Hospital complex in partnership with Clampshell Construction Company, improving efficiency and patient satisfaction.",
       duration: "Ongoing",
       location: "Oyo state, Nigeria",
       features: ["24/7 security", "Automated maintenance", "Energy efficiency", "Roofing"]

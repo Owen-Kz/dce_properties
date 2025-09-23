@@ -205,8 +205,8 @@ const Services = () => {
         "Tailored partnership models to fit your hotel's size and goals"
       ],
       images: [
-        "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        "https://res.cloudinary.com/dll8awuig/image/upload/v1758625349/portfolio/id_0nsxf7uce/qhy1c88x7mayxtqhaegf.jpg",
+        "https://res.cloudinary.com/dll8awuig/image/upload/v1758625348/portfolio/id_0nsxf7uce/jkzpnhgmbkp73efsefgd.jpg"
       ]
     },
     {
