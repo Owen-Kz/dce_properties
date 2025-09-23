@@ -24,7 +24,7 @@ const Index = () => {
       case '/about':
         return {
           title: 'About DCE Properties: Our Mission, Vision & Expert Team',
-          description: 'Meet the experienced team behind DCE Properties. With over 12 years, 500+ properties, and a commitment to integrity, we are transforming real estate in Nigeria.',
+          description: 'At DCE Properties & Facility Management Ltd, we are a fast-growing real estate company in Lagos committed to property sales & marketing, property and facility management, hotel & hospitality partnerships, real estate investment opportunities, and sustainable real estate development',
           canonicalUrl: `${baseUrl}/about`,
         };
       case '/partners':
@@ -56,6 +56,12 @@ const Index = () => {
           title: 'Artisan Partnership Program | Join DCE Properties Network',
           description: 'Skilled Carpenter, Electrician, or Plumber? Join our network for steady work, professional development, and fair compensation on quality projects.',
           canonicalUrl: `${baseUrl}/artisans`,
+        };
+      case '/projects' :
+        return {
+          title: 'Our Real Estate Projects | DCE Properties & Facility Management',
+          description: 'Explore our portfolio of successful real estate developments and property management projects across Lagos and Ogun State.',
+          canonicalUrl: `${baseUrl}/projects`,
         };
       case '/contact':
         return {

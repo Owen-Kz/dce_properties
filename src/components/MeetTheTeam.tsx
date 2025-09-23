@@ -165,10 +165,9 @@ const MeetTheTeam = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">About DCE Properties</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Who We Are</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover our vision, mission, and values that drive our commitment to transforming 
-            the real estate landscape with integrity and innovation.
+      At DCE Properties & Facility Management Ltd, we are a fast-growing real estate company in Lagos committed to property sales & marketing, property and facility management, hotel & hospitality partnerships, real estate investment opportunities, and sustainable real estate development
           </p>
         </motion.div>
 

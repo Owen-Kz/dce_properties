@@ -37,12 +37,12 @@ const Footer = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center p-1">
                     <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
-                      {/* <span className="text-foreground font-bold text-xs">CCICPFM</span> */}
-                      <img src="https://res.cloudinary.com/dll8awuig/image/upload/v1758593525/portfolio/id_uk3r0xy52/fnadhwwvpxeivinbntgr.jpg" alt="CCICPFM" />
+                      {/* <span className="text-foreground font-bold text-xs">CICPFM</span> */}
+                      <img src="https://res.cloudinary.com/dll8awuig/image/upload/v1758593525/portfolio/id_uk3r0xy52/fnadhwwvpxeivinbntgr.jpg" alt="CICPFM" />
                     </div>
                   </div>
                   <div>
-                    <p className="font-semibold text-background">CCICPFM</p>
+                    <p className="font-semibold text-background">CICPFM</p>
                     <p className="text-background/70 text-xs">Real Estate Regulatory Body</p>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const Footer = () => {
               {/* Regulatory Badge */}
               <div className="flex items-center space-x-2 bg-background/5 px-3 py-1 rounded-full">
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-background/70 text-xs">Regulated by CCICPFM</span>
+                <span className="text-background/70 text-xs">Regulated by CICPFM</span>
               </div>
             </div>
             

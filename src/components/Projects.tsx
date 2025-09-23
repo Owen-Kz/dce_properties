@@ -57,19 +57,19 @@ const Projects = () => {
   };
 
   const projects = [
+    // {
+    //   id: 1,
+    //   title: "Renovation for Kingdom of Believers Christian Centre",
+    //   category: "Property Construction",
+    //   beforeImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758590858/portfolio/id_s3huxrpkp/wmm4ouf2v74y44iwc7r6.png",
+    //   afterImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758590859/portfolio/id_s3huxrpkp/fl9hxjvwugasgmwstqqg.png",
+    //   description: "Complete transformation of a dated residential building into a modern church premises with premium finishes and smart home integration.",
+    //   duration: "6 months",
+    //   location: "Apapa, Lagos",
+    //   features: ["Smart electical system", "Premium marble finishes", "Premium Ceiling", "Interlocked Compound"]
+    // },
     {
       id: 1,
-      title: "Renovation for Kingdom of Believers Christian Centre",
-      category: "Property Construction",
-      beforeImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758590858/portfolio/id_s3huxrpkp/wmm4ouf2v74y44iwc7r6.png",
-      afterImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758590859/portfolio/id_s3huxrpkp/fl9hxjvwugasgmwstqqg.png",
-      description: "Complete transformation of a dated residential building into a modern church premises with premium finishes and smart home integration.",
-      duration: "6 months",
-      location: "Apapa, Lagos",
-      features: ["Smart electical system", "Premium marble finishes", "Premium Ceiling", "Interlocked Compound"]
-    },
-    {
-      id: 2,
       title: "Oyo State Hospital Management Board. (General Hospital IGBHOHO)",
       category: "Facility Management",
       beforeImage: "https://res.cloudinary.com/dll8awuig/image/upload/v1758590862/portfolio/id_s3huxrpkp/s78qjym8pm3x7dpheyrf.jpg",
