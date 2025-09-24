@@ -24,8 +24,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-background/80 mb-6 max-w-md">
-                Your trusted partner in property ownership and investment. 
-                We make real estate accessible through flexible savings plans and transparent processes.
+                Your trusted partner in real estate investing and facility solutions. We Make Real estate investing Accessible, flexible and Transparent.
               </p>
               <div className="text-2xl font-bold text-background mb-2">
                 Acquire • Protect • Manage • Grow

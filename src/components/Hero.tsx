@@ -130,7 +130,7 @@ const Hero = () => {
             
             {/* Subtext */}
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
-             with DCE Properties. Your trusted partner in property investment and management solutions
+             with DCE Properties. Your Trusted Partner In Real Estate Investing and Facility Solutions
             </p>
 
             {/* CTA Buttons */}

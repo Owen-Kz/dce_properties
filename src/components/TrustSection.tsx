@@ -30,7 +30,7 @@ const TrustSection = () => {
         </svg>
       ),
       title: "CICPFM Full Member",
-      description: "Certified member of the Chartered Institute of Corporate Property and Facility Managers",
+      description: "Certified Member, Chartered Institute of Contract, Project and Facility Management of Nigeria",
     },
     {
       icon: (
