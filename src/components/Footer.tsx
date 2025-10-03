@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 const Footer = () => {
   return (
     <footer className="bg-foreground rounded-t-[10vw] text-background relative overflow-hidden" id="contact">
- 
-      
       <div className="relative z-10 py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -30,14 +28,46 @@ const Footer = () => {
                 Acquire • Protect • Manage • Grow
               </div>
               
+              {/* Contact Information */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-5 h-5 text-background/70">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-background/80 text-sm">Lagos, Nigeria</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-5 h-5 text-background/70">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <a href="tel:+2347066049148" className="text-background/80 hover:text-background transition-colors text-sm">
+                    +234 706 604 9148
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-5 h-5 text-background/70">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </div>
+                  <a href="mailto:dceproperties@gmail.com" className="text-background/80 hover:text-background transition-colors text-sm">
+                    dceproperties@gmail.com
+                  </a>
+                </div>
+              </div>
+              
               {/* Regulatory Body Section */}
               <div className="mt-6 pt-6 border-t border-background/20">
                 <p className="text-background/70 text-sm mb-3">Registered and regulated by:</p>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center p-1">
                     <div className="w-10 h-10 bg-white rounded flex items-center justify-center">
-                      {/* <span className="text-foreground font-bold text-xs">CICPFM</span> */}
-                      <img src="https://res.cloudinary.com/dll8awuig/image/upload/v1758593525/portfolio/id_uk3r0xy52/fnadhwwvpxeivinbntgr.jpg" alt="CICPFM" />
+                      <img src="https://res.cloudinary.com/dll8awuig/image/upload/v1758593525/portfolio/id_uk3r0xy52/fnadhwwvpxeivinbntgr.jpg" alt="CICPFM" className="w-8 h-8 object-contain" />
                     </div>
                   </div>
                   <div>
@@ -60,12 +90,27 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Support */}
+            {/* Support & Contact */}
             <div>
-              <h4 className="font-semibold text-lg mb-4">Support</h4>
-              <ul className="space-y-2 text-background/80">
-                <li><a href="#contact" className="hover:text-background transition-colors">Contact Us</a></li>
-              </ul>
+              <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
+              <div className="space-y-4 text-background/80">
+                <div>
+                  <p className="font-medium text-background text-sm mb-1">Address</p>
+                  <p className="text-sm">Lagos, Nigeria</p>
+                </div>
+                <div>
+                  <p className="font-medium text-background text-sm mb-1">Phone</p>
+                  <a href="tel:+2347066049148" className="text-sm hover:text-background transition-colors block">
+                    +234 706 604 9148
+                  </a>
+                </div>
+                <div>
+                  <p className="font-medium text-background text-sm mb-1">Email</p>
+                  <a href="mailto:dceproperties@gmail.com" className="text-sm hover:text-background transition-colors block">
+                    dceproperties@gmail.com
+                  </a>
+                </div>
+              </div>
               
               {/* Additional Regulatory Info */}
               <div className="mt-8 p-4 bg-background/5 rounded-lg">
